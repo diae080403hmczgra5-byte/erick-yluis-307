@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Infantil{% endblock %}
+
+{% block content %}
+<style>
+
+    
+    h1 
+   {
+     color: orange;
+   }
+</style>
+<h1>Películas de infantil</h1>
+<ul>
+    {% for pelicula in peliculas %}
+    <li><strong>{{ pelicula.titulo }}</strong>: {{ pelicula.sinopsis }}</li>
+    {% endfor %}
+<div class="media">
+    <img src="{{ url_for('static', filename='images/inafanti.jpg') }}" alt="Foto 1" style="max-width:100%; height:auto;">
+</div>
+<div class="media">
+    <img src="{{ url_for('static', filename='images/mi-vecino-totoro.jpg') }}" alt="Foto 1" style="max-width:100%; height:auto;">
+</div>
+</ul>
+{% endblock %}

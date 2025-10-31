@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Suspenso{% endblock %}
+
+{% block content %}
+<style>
+
+    
+    h1 
+   {
+     color: rgb(98, 184, 64);
+   }
+</style>
+
+<h1>Películas de Suspenso</h1>
+<ul>
+    {% for pelicula in peliculas %}
+    <li><strong>{{ pelicula.titulo }}</strong>: {{ pelicula.sinopsis }}</li>
+    {% endfor %}
+<div class="media">
+    <img src="{{ url_for('static', filename='images/suspenso.jpg') }}" alt="Foto 1" style="max-width:100%; height:auto;">
+</div>
+<div class="media">
+    <img src="{{ url_for('static', filename='images/perdida.jpg') }}" alt="Foto 1" style="max-width:100%; height:auto;">
+</div>
+</ul>
+{% endblock %}
